@@ -1,9 +1,19 @@
 extends _layout
 
 block title
-	title Title of template
+	title Main-page
 
 block content
-	.out
-		+icon("octa")
-		| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, ipsum maxime, tempora deserunt minima suscipit voluptatem possimus ratione inventore eveniet autem esse accusamus eos quibusdam consequuntur quia officiis eum! Et!
+	header.header
+		.header__in
+			a.header__logo.icon.icon-logo(href="#")
+			.header__btn
+				button.btn.btn_mod
+					| Обратный звонок
+			.callback
+				a.callback__link(href="tel:+7(727)2277777")
+					| +7 (727) 227-77-77
+				button.hamburger
+					span
+	.l-center
+

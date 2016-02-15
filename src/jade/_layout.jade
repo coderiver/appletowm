@@ -1,6 +1,5 @@
 mixin icon(name)
-  svg(class="icon icon-" + name)
-    use(xlink:href="#icon-" + name)
+  i(class="icon icon-" + name)
 
 doctype html
 html
@@ -16,7 +15,6 @@ html
 
     //BEGIN out
     .out
-      | Just text
       block content
     //END out
     

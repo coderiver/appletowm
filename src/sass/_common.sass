@@ -28,9 +28,98 @@
 // =book
 // 	font-family: "book", Arial, sans-serif
 
+//fonts
++font(opensans-bold, opensans-bold)
++font(opensans-semibold, opensans-semibold)
++font(opensans-light, opensans-light)
++font(opensans-regular, opensans-regular)
++font(opensans-lightitalic, opensans-lightitalic)
+
+=reg
+	font-family: 'opensans-regular', sans-serif
+=light
+	font-family: 'opensans-light', sans-serif
+=lighti
+	font-family: 'opensans-lightitalic', sans-serif
+=bold
+	font-family: 'opensans-bold', sans-serif
+=sbold
+	font-family: 'opensans-semibold', sans-serif
+
+$primary: #1c1634
+$accent: #e9a84e
+
 body
-	font-family: Arial, sans-serif
-	font-size: 12px
+	+reg
+	font-size: 18px
 	line-height: 1.4
-	
+	background: url('../img/bg.jpg') repeat-y
+	//background-size: contain
+	height: 2000px
+.out
+	padding-top: 75px
 // common blocks
+%in
+	width: 1630px
+	max-width: 100%
+	margin: 0 auto
+	padding: 0 15px
+	position: relative
+	+r(1400)
+
+.l-center
+	@extend %in
+a
+	text-decoration: none
+
+.btn
+	line-height: 1
+	+reg
+	font-size: 18px
+	color: #fff
+	background: $accent
+	padding: ((13 / 18) * 1em) ((29 / 18) * 1em)
+	border-radius: 1.2em
+	&_mod
+		font-size: 12px
+		+sbold
+		text-transform: uppercase
+		color: #202441
+
+.hamburger
+	display: inline-block
+	vertical-align: middle
+	cursor: pointer
+	position: relative
+	+tr(border-color .3s)
+	height: 75px
+	width: 75px
+	padding: 10px
+	background: #fff
+	span
+		width: 34px
+		height: 28px
+		display: inline-block
+		border: 3px solid #000
+		border-width: 3px 0
+		position: relative
+
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			height: 3px
+			background: #000
+			width: 100%
+			margin-top: -1px
+			+tr(background .3s)
+
+h1, .h1
+	color: $accent
+	+reg
+	font-weight: 100
+	font-size: 36px
+	margin: 1em 0
+	text-align: center
+	text-transform: uppercase

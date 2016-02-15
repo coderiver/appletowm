@@ -1,1 +1,40 @@
 // Normally mainpage styles
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	+clr
+	&__in
+		height: 75px
+		background: linear-gradient(-96deg, rgb(32,38,66) 0%, rgb(32,27,59) 100%)
+		+vertical
+		@extend %in
+	&__logo
+		color: #fff
+		font-size: 50px
+		float: left
+		line-height: 1
+		position: absolute
+		width: percentage( 370 / 1600)
+		text-align: right
+		left: 0
+		top: 50%
+		margin-top: -.50em
+	&__btn
+		display: inline-block
+		vertical-align: middle
+		text-align: center
+	.callback
+		position: absolute
+		right: 0
+		top: 0
+
+.callback
+	font-size: 20px
+	&__link
+		color: #fff
+		+bold
+		font-size: 24px
+		margin-right: 15px
+		line-height: 1
