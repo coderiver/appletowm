@@ -5,15 +5,41 @@ block title
 
 block content
 	header.header
-		.header__in
-			a.header__logo.icon.icon-logo(href="#")
-			.header__btn
-				button.btn.btn_mod
-					| Обратный звонок
-			.callback
-				a.callback__link(href="tel:+7(727)2277777")
-					| +7 (727) 227-77-77
-				button.hamburger
-					span
+		.l-center
+			.header__in
+				a.header__logo.icon.icon-logo(href="#")
+				.header__btn
+					button.btn.btn_mod
+						| Обратный звонок
+				.callback
+					a.callback__link(href="tel:+7(727)2277777")
+						| +7 (727) 227-77-77
+					button.hamburger
+						span
 	.l-center
+		.screen
+			.screen__bg
+				video(autoplay loop poster="img/poster.jpg" style="background-image: url('img/poster.jpg')")
+					source(src="video/bg.webm" type="video/webm")
+					source(src="video/bg.mp4" type="video/mp4")
+			.screen__in
+				.screen__logo.icon.icon-logo
+				h1.h1
+					| Жилой комплекс
+				.screen__section
+					.col1
+						.box
+							h2.h2
+								| О ЖилоМ комплексЕ
+							.box__text
+								| В этом удобном многофункциональном
+								| жилом комплексе есть абсолютно все
+								| для комфортной счастливой жизни.
+							a.link-more(href="#")
+								| Подробнее...
+					.col1
+						.box-video(style="background-image: url('img/poster_sm.jpg')")
+							a.i-play(href="https://www.youtube.com/watch?v=zv368VTAa5E" target="_blank")
+			.screen__icon
+				i.i-icon-mouse
 

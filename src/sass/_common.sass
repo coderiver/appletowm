@@ -54,8 +54,9 @@ body
 	font-size: 18px
 	line-height: 1.4
 	background: url('../img/bg.jpg') repeat-y
-	//background-size: contain
-	height: 2000px
+	font-weight: 100
+	background-size: cover
+
 .out
 	padding-top: 75px
 // common blocks
@@ -67,10 +68,27 @@ body
 	position: relative
 	+r(1400)
 
+[class^="i-icon"], [class*=" i-icon-"]
+	display: inline-block
 .l-center
 	@extend %in
 a
 	text-decoration: none
+
+.i-play
+	display: inline-block
+	width: 70px
+	height: 70px
+	position: relative
+	border-radius: 50%
+	background: rgba($primary, .6)
+	&:after
+		content: ''
+		position: absolute
+		+arr(23, 29, #fff, r)
+		left: 50%
+		top: 50%
+		margin: -13.5px 0 0 -8.5px
 
 .btn
 	line-height: 1
@@ -115,6 +133,13 @@ a
 			margin-top: -1px
 			+tr(background .3s)
 
+.link-more
+	font-size: 18px
+	text-decoration: underline
+	color: $accent
+	display: inline-block
+	+light
+
 h1, .h1
 	color: $accent
 	+reg
@@ -122,4 +147,11 @@ h1, .h1
 	font-size: 36px
 	margin: 1em 0
 	text-align: center
+	text-transform: uppercase
+
+h2, .h2
+	color: $accent
+	+reg
+	font-weight: 100
+	font-style: 24px
 	text-transform: uppercase
