@@ -29,7 +29,6 @@
 // 	font-family: "book", Arial, sans-serif
 
 //fonts
-+font('Zapf Dingbats', 'Zapf Dingbats')
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic&subset=latin,cyrillic')
 
 =reg
@@ -39,6 +38,7 @@
 	font-weight: 100
 =lighti
 	font-weight: 100
+	font-style: italic
 =bold
 	font-weight: 700
 =sbold
@@ -216,3 +216,47 @@ sup
 	display: inline-block
 	vertical-align: top
 	font-size: .6em
+
+.input-txt
+	display: block
+	width: 100%
+	padding: 10px 15px
+	font-size: 14px
+	border: 0
+	+placeholder
+		color: #a0a0a0
+		+lighti
+.form
+	.field
+		margin-bottom: 5px
+		&.is-right
+			text-align: right
+		.form-error
+			font-size: 14px
+			//color: #e1000a
+			color: $accent
+			+reg
+	textarea
+		resize: none
+
+.popup-thanks
+	text-align: center
+	z-index: 300
+	box-shadow: 0 0 3px #000
+	width: 300px
+	padding: 25px
+	position: fixed
+	right: 20px
+	top: 20px
+	background: #fff
+	visibility: hidden
+	opacity: 0
+	transition: opacity .3s, visibility .3s
+	&.is-open
+		visibility: visible
+		opacity: 1
+	p
+		font-size: 18px
+	.popup__close
+		right: 10px
+		top: 10px

@@ -46,6 +46,8 @@
 	padding-bottom: 70px
 	margin-top: -75px
 	height: 100vh
+	+rh(650)
+		height: auto
 	&__bg
 		position: absolute
 		left: 0
@@ -81,6 +83,9 @@
 	&__logo
 		font-size: 200px
 		color: #fff
+		+r(1380)
+			font-size: 150px
+
 	h1, .h1
 		margin: .3em 0
 	&__section
@@ -107,6 +112,8 @@
 		left: 0
 		right: 0
 		bottom: 0
+	.box
+		font-size: 16px
 
 .box
 	color: #fff
@@ -336,6 +343,7 @@
 	&__logo
 		color: $accent
 		font-size: 93px
+		margin-top: -13px
 		margin-bottom: 20px
 	&__text
 		padding-right: percentage( 140 / 318)
