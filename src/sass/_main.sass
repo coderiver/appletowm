@@ -47,7 +47,6 @@
 	margin-top: -75px
 	height: 100vh
 	&__bg
-		//display: none
 		position: absolute
 		left: 0
 		right: 0
@@ -114,11 +113,13 @@
 	background-image: linear-gradient(-20deg, #180a29 0%, #22324a 50%)
 	font-size: 20px
 	padding: ((56 / 20) * 1em) ((90 / 20) * 1em) ((60 / 20) * 1em) ((70 / 20) * 1em)
+	&_mod
+		background: transparent
 	h2, .h2
 		margin-bottom: 30px
 	&__text
 		+light
-		letter-spacing: 2px
+		letter-spacing: 1px
 		font-weight: 100
 		+ .link-more
 			margin-top: 30px
@@ -130,4 +131,231 @@
 	.i-play
 		display: inline-block
 		vertical-align: middle
+
+.section
+	background-repeat: no-repeat
+	background-size: cover
+	height: 640px
+	max-height: 100%
+	position: relative
+	+vertical
+	z-index: 1
+	&:after
+		content: ''
+		background: url('../img/section-bg.png') no-repeat top left
+		background-size: cover
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+	&__in
+		text-align: left
+		margin: 0 auto
+		width: 100%
+		max-width: 1200px
+		display: inline-block
+		vertical-align: middle
+		+clr
+	.box
+		width: 50%
+	&_right
+		.box
+			float: right
+			text-align: right
+		&:after
+			transform: scaleX(-1)
+
+.advantage
+	position: relative
+	overflow: hidden
+	&.is-orange
+		.advantage__more
+			background: rgba($accent, .8)
+		.advantage__text
+			border-color: $primary
+		&:hover
+			.advantage__more
+				background: $accent
+	&__img
+		width: 100%
+		height: 0
+		padding-bottom: 100%
+		img
+			width: 100%
+			height: auto
+	&__more
+		position: absolute
+		left: 0
+		right: 0
+		top: 100%
+		bottom: 0
+		margin-top: -100px
+		padding: 0 35px
+		color: #fff
+		background: rgba($primary, .8)
+		transition: top .3s ease, background .3s
+		+r(1380)
+			margin-top: -80px
+	&__title
+		height: 100px
+		+vertical
+		text-align: left
+		+r(1380)
+			height: 80px
+		h3, .h3
+			font-size: 18px
+			text-align: left
+			display: inline-block
+			vertical-align: middle
+	&__text
+		border-top: 1px solid $accent
+		padding-top: 38px
+		font-size: 14px
+		line-height: 1.8
+		+r(1380)
+			padding-top: 20px
+			line-height: 1.4
+
+	&:hover
+		.advantage__more
+			top: 100px
+			background: $primary
+			+r(1380)
+				top: 80px
+
+.item
+	position: relative
+	&__img
+		width: 100%
+		overflow: hidden
+		height: 0
+		padding-bottom: 61%
+		img
+			width: 100%
+			height: auto
+	&__more
+		visibility: hidden
+		opacity: 0
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		+vertical
+		background: rgba(#000, .8)
+		transition: opacity .3s, visiblity .3s
+		&-in
+			display: inline-block
+			vertical-align: middle
+			font-style: 18px
+			> a
+				color: $accent
+				font-size: 18px
+	&:hover
+		.item__more
+			visibility: visible
+			opacity: 1
+
+.block
+	margin-bottom: 34px
+	&__img
+		width: 100%
+		height: 0
+		padding-bottom: 100%
+		overflow: hidden
+		text-align: center
+		background: #fff
+		+vertical
+		img
+			display: inline-block
+			vertical-align: middle
+			max-width: 100%
+			height: auto
+	&__bottom
+		text-align: center
+		padding: 30px 10px 40px
+		transition: background .3s
+		border-top: 1px solid #e7e7e7
+		.btn
+			transition: background .3s
+			width: 220px
+			max-width: 100%
+	&__size
+		font-size: 36px
+		color: #fff
+		line-height: 1
+		margin-bottom: 20px
+		+tr(color .3s)
+	&__title
+		color: $accent
+		+tr(color .3s)
+		+light
+	&:hover
+		.block
+			&__bottom
+				background: #fff
+				.btn
+					background: $primary
+			&__size, &__title
+				color: #190e2d
+
+#map
+	height: 500px
+	
+.map
+	position: relative
+	&__header
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		background: rgba($accent, .8)
+		z-index: 10
+		h1,.h1
+			color: #fff
+			letter-spacing: 3px
+			margin: 25px 0
+
+.footer
+	border-top: 1px solid #e7e7e7
+	padding-bottom: 70px
+	text-align: left
+	> .row
+		padding-top: 70px
+	.logo-woolim
+		position: relative
+		top: -35px
+	h4, .h4
+		text-align: left
+		margin-bottom: 20px
+	p
+		font-size: 14px
+		color: #fff
+	&__logo
+		color: $accent
+		font-size: 93px
+		margin-bottom: 20px
+	&__text
+		padding-right: percentage( 140 / 318)
+		p
+			margin-bottom: 20px
+	h1, .h1
+		margin-top: 0
+		text-align: left
+	&__phone
+		a
+			color: #fff
+		i, span
+			display: inline-block
+			vertical-align: middle
+		span
+			font-size: 24px
+			+sbold
+		.icon-phone
+			font-size: 30px
+			margin-right: 10px
+
+
 

@@ -29,49 +29,55 @@
 // 	font-family: "book", Arial, sans-serif
 
 //fonts
-+font(opensans-bold, opensans-bold)
-+font(opensans-semibold, opensans-semibold)
-+font(opensans-light, opensans-light)
-+font(opensans-regular, opensans-regular)
-+font(opensans-lightitalic, opensans-lightitalic)
++font('Zapf Dingbats', 'Zapf Dingbats')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic&subset=latin,cyrillic')
 
 =reg
-	font-family: 'opensans-regular', sans-serif
+	font-family: 'Open Sans', sans-serif
+	font-weight: 400
 =light
-	font-family: 'opensans-light', sans-serif
+	font-weight: 100
 =lighti
-	font-family: 'opensans-lightitalic', sans-serif
+	font-weight: 100
 =bold
-	font-family: 'opensans-bold', sans-serif
+	font-weight: 700
 =sbold
-	font-family: 'opensans-semibold', sans-serif
+	font-weight: 600
 
 $primary: #1c1634
 $accent: #e9a84e
 
 body
 	+reg
+	+light
 	font-size: 18px
 	line-height: 1.4
 	background: url('../img/bg.jpg') repeat-y
-	font-weight: 100
 	background-size: cover
 
 .out
 	padding-top: 75px
 // common blocks
 %in
-	width: 1630px
 	max-width: 100%
 	margin: 0 auto
 	padding: 0 15px
 	position: relative
 	+r(1400)
 
+.l-center
+	width: 1630px
+	@extend %in
+
+.l-center-md
+	width: 1060px
+	@extend %in
+.l-center-sm
+	width: 1005px
+	@extend %in
+
 [class^="i-icon"], [class*=" i-icon-"]
 	display: inline-block
-.l-center
-	@extend %in
 a
 	text-decoration: none
 
@@ -92,12 +98,15 @@ a
 
 .btn
 	line-height: 1
-	+reg
 	font-size: 18px
 	color: #fff
 	background: $accent
 	padding: ((13 / 18) * 1em) ((29 / 18) * 1em)
 	border-radius: 1.2em
+	font-weight: 100
+	display: inline-block
+	text-align: center
+	+reg
 	&_mod
 		font-size: 12px
 		+sbold
@@ -140,6 +149,16 @@ a
 	display: inline-block
 	+light
 
+.logo-woolim
+	display: inline-block
+	width: 255px
+	height: 103px
+	background: url('../img/logo-woolim.svg') no-repeat top center
+	background-size: cover
+	&:before
+		content: ''
+		display: inline-block
+
 h1, .h1
 	color: $accent
 	+reg
@@ -148,10 +167,52 @@ h1, .h1
 	margin: 1em 0
 	text-align: center
 	text-transform: uppercase
+	&_light
+		color: #fff
 
 h2, .h2
 	color: $accent
+	+light
+	font-size: 24px
+	text-transform: uppercase
+	letter-spacing: 1px
+	&_light
+		color: #fff
+
+h3, .h3
+	color: #fff
 	+reg
 	font-weight: 100
-	font-style: 24px
+	font-size: 18px
 	text-transform: uppercase
+
+h4, .h4
+	color: $accent
+	font-size: 18px
+	+sbold
+
+.row
+	+clr
+.row-pad
+	margin: 0 -17px
+	+clr
+	> div
+		padding: 0 17px
+.col4
+	float: left
+	width: 25%
+
+.col3
+	float: left
+	width: 33.33333%
+
+.col-sm
+	float: left
+	width: percentage(318 / 1005)
+.col-md
+	float: left
+	width: percentage(665 / 1005)
+sup
+	display: inline-block
+	vertical-align: top
+	font-size: .6em
