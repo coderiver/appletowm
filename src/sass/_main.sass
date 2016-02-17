@@ -95,6 +95,7 @@
 		font-size: 18px
 		text-align: left
 		display: table
+		position: relative
 		.col1
 			display: table-cell
 			width: 50%
@@ -112,14 +113,17 @@
 		left: 0
 		right: 0
 		bottom: 0
-	.box
-		font-size: 16px
+	+r(1400)
+		.screen__section
+			padding: 0 80px
+		.box
+			font-size: 14px
 
 .box
 	color: #fff
 	background-image: linear-gradient(-20deg, #180a29 0%, #22324a 50%)
 	font-size: 20px
-	padding: ((56 / 20) * 1em) ((90 / 20) * 1em) ((60 / 20) * 1em) ((70 / 20) * 1em)
+	padding: em(56, 20) em(90, 20) em(60, 20) em(70, 20)
 	&_mod
 		background: transparent
 	h2, .h2
@@ -204,13 +208,16 @@
 		background: rgba($primary, .8)
 		transition: top .3s ease, background .3s
 		+r(1380)
-			margin-top: -80px
+			margin-top: -50px
+			padding: 0 20px
+			h3, .h3
+				font-size: 16px
 	&__title
 		height: 100px
 		+vertical
 		text-align: left
 		+r(1380)
-			height: 80px
+			height: 50px
 		h3, .h3
 			font-size: 18px
 			text-align: left
@@ -222,15 +229,14 @@
 		font-size: 14px
 		line-height: 1.8
 		+r(1380)
-			padding-top: 20px
-			line-height: 1.4
-
+			padding-top: 10px
+			line-height: 1.2
 	&:hover
 		.advantage__more
 			top: 100px
 			background: $primary
 			+r(1380)
-				top: 80px
+				top: 50px
 
 .item
 	position: relative
@@ -267,6 +273,7 @@
 
 .block
 	margin-bottom: 34px
+	display: block
 	&__img
 		width: 100%
 		height: 0

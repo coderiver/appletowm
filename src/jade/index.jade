@@ -7,9 +7,10 @@ block content
 	header.header
 		.l-center
 			.header__in
-				a.header__logo.icon.icon-logo(href="#")
+				i.icon-vk
+				a.header__logo.icon-logo(href="#")
 				.header__btn
-					button.btn.btn_mod
+					button.btn.btn_mod.btn_bg
 						| Обратный звонок
 				.callback
 					a.callback__link(href="tel:+7(727)2277777")
@@ -23,10 +24,13 @@ block content
 					source(src="video/bg.webm" type="video/webm")
 					source(src="video/bg.mp4" type="video/mp4")
 			.screen__in
-				.screen__logo.icon.icon-logo
+				.screen__logo.icon-logo
 				h1.h1
 					| Жилой комплекс
 				.screen__section
+					button.call-btn.js-fixed-btn
+						span
+							| ОБРАТНЫЙ ЗВОНОК
 					.col1
 						.box
 							h2.h2
@@ -56,7 +60,7 @@ block content
 						| и встроенной мебелью. Качественный
 						| ремонт без потери времени и нервов.
 						| Гарантия на ремонт и технику.
-		section.section.section_right(style="background-image: url('img/section-2.jpg')")
+		section.section.section_right.js-section-center(style="background-image: url('img/section-2.jpg')")
 			.section__in
 				.box.box_mod
 					h2.h2
@@ -257,7 +261,7 @@ block content
 		.l-center-md
 			.row-pad
 				.col3
-					.block
+					a.block(href="files/B2.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-1.jpg")
 						.block__bottom
@@ -265,10 +269,10 @@ block content
 								| «B2» Oriental Modern
 							.block__size
 								| 74.47 m<sup>2</sup>
-							a.btn(href="files/B2.pdf")
+							button.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/B3.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-2.jpg")
 						.block__bottom
@@ -276,10 +280,10 @@ block content
 								| «B3» Oriental Modern
 							.block__size
 								| 109.15 m<sup>2</sup>
-							a.btn(href="files/B3.pdf")
+							button.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/L3.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-3.jpg")
 						.block__bottom
@@ -287,10 +291,10 @@ block content
 								| «L3» Semi Classic
 							.block__size
 								| 110.0 m<sup>2</sup>
-							a.btn(href="files/L3.pdf")
+							button.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/C4.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-4.jpg")
 						.block__bottom
@@ -298,10 +302,10 @@ block content
 								| «C4» Semi Classic
 							.block__size
 								| 124.5 m<sup>2</sup>
-							a.btn(href="files/C4.pdf")
+							btn.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/C2.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-5.jpg")
 						.block__bottom
@@ -309,10 +313,10 @@ block content
 								| «C2» Semi Classic
 							.block__size
 								| 130.5 m<sup>2</sup>
-							a.btn(href="files/C2.pdf")
+							button.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/L1.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-6.jpg")
 						.block__bottom
@@ -320,10 +324,10 @@ block content
 								| «L1» Semi Classic
 							.block__size
 								| 144.1 m<sup>2</sup>
-							a.btn(href="files/L1.pdf")
+							button.btn
 								| Загрузить
 				.col3
-					.block
+					a.block(href="files/D.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-7.jpg")
 						.block__bottom
@@ -331,10 +335,10 @@ block content
 								| «D» Dandy Modern
 							.block__size
 								| 155.0 m<sup>2</sup>
-							a.btn(href="files/D.pdf")
+							button.btn
 								| Загрузить PDF
 				.col3
-					.block
+					a.block(href="files/B.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-8.jpg")
 						.block__bottom
@@ -342,10 +346,10 @@ block content
 								| «B» Oriental Modern
 							.block__size
 								| 190.5 m<sup>2</sup>
-							a.btn(href="files/B.pdf")
+							button.btn
 								| Загрузить PDF
 				.col3
-					.block
+					a.block(href="files/Ba.pdf" target="_blank")
 						.block__img
 							img(src="img/flat-9.jpg")
 						.block__bottom
@@ -353,7 +357,7 @@ block content
 								| «B1» Oriental Modern
 							.block__size
 								| 190.5 m<sup>2</sup>
-							a.btn(href="files/Ba.pdf")
+							button.btn
 								| Загрузить PDF
 
 		.map
@@ -510,7 +514,7 @@ block content
 								.field
 									textarea.input-txt(rows="3", name="comment")
 								.field.is-right
-									button.btn
+									button.btn.btn_bg
 										| ОТПРАВИТЬ
 
 

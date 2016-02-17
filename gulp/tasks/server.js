@@ -11,7 +11,7 @@ gulp.task('server', function() {
         port: 8080,
         notify: false,
         ghostMode: false,
-        online: false,
+        online: true,
         open: true
     });
 });

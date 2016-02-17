@@ -46,6 +46,11 @@
 
 $primary: #1c1634
 $accent: #e9a84e
+$red: #D94A51
+
+@function em($px, $base-fs)
+	@return ($px / $base-fs) * 1em
+
 
 body
 	+reg
@@ -66,8 +71,9 @@ body
 	+r(1400)
 
 .l-center
-	width: 1630px
+	width: 1710px
 	@extend %in
+	padding: 0 80px
 
 .l-center-md
 	width: 1060px
@@ -88,6 +94,9 @@ a
 	position: relative
 	border-radius: 50%
 	background: rgba($primary, .6)
+	+tr(background .3s)
+	&:hover
+		background: $red
 	&:after
 		content: ''
 		position: absolute
@@ -107,18 +116,24 @@ a
 	display: inline-block
 	text-align: center
 	+reg
+	transition: background .3s, color .3s
 	&_mod
 		font-size: 12px
 		+sbold
 		text-transform: uppercase
 		color: #202441
+	&_bg
+		&:hover
+			background: $red
+			color: #fff
+
 
 .hamburger
 	display: inline-block
 	vertical-align: middle
 	cursor: pointer
 	position: relative
-	+tr(border-color .3s)
+	+tr(background .3s)
 	height: 75px
 	width: 75px
 	padding: 10px
@@ -130,7 +145,7 @@ a
 		border: 3px solid #000
 		border-width: 3px 0
 		position: relative
-
+		transition: border .3s
 		&:after
 			content: ''
 			position: absolute
@@ -141,6 +156,13 @@ a
 			width: 100%
 			margin-top: -1px
 			+tr(background .3s)
+	&:hover
+		background: transparent
+		span
+			border-color: $accent
+			&:after
+				background: $accent
+			
 
 .link-more
 	font-size: 18px
@@ -260,3 +282,28 @@ sup
 	.popup__close
 		right: 10px
 		top: 10px
+
+.call-btn
+	width: 120px
+	height: 120px
+	border-radius: 50%
+	background-image: radial-gradient(50% 50%,#edac51 0%, #9d671d 100%)
+	position: absolute
+	top: 50%
+	left: 50%
+	margin-left: -60px
+	margin-top: -60px
+	border: 2px solid  #fff
+	z-index: 3
+	box-shadow: 0 0 0 10px rgba(#fff, .4)
+	+vertical
+	font-weight: 100
+	&.is-fixed
+		position: fixed
+	span
+		font-size: 16px
+		color: #fff
+		line-height: 1.2
+		display: inline-block
+		vertical-align: middle
+		text-shadow: 2px 2px 4px rgba(158, 104, 29, 0.8)
