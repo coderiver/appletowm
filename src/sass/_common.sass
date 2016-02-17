@@ -59,6 +59,10 @@ body
 	line-height: 1.4
 	background: url('../img/bg.jpg') repeat-y
 	background-size: cover
+	+r(1100)
+		font-size: 16px
+	+r(767)
+		font-size: 14px
 
 .out
 	padding-top: 75px
@@ -191,6 +195,10 @@ h1, .h1
 	text-transform: uppercase
 	&_light
 		color: #fff
+	+r(1100)
+		font-size: 28px
+	+r(767)
+		font-size: 20px
 
 h2, .h2
 	color: $accent
@@ -198,6 +206,10 @@ h2, .h2
 	font-size: 24px
 	text-transform: uppercase
 	letter-spacing: 1px
+	+r(1100)
+		font-size: 20px
+	+r(767)
+		font-size: 16px
 	&_light
 		color: #fff
 
@@ -207,11 +219,19 @@ h3, .h3
 	font-weight: 100
 	font-size: 18px
 	text-transform: uppercase
+	+r(1100)
+		font-size: 16px
+	+r(767)
+		font-size: 14px
 
 h4, .h4
 	color: $accent
 	font-size: 18px
 	+sbold
+	+r(1100)
+		font-size: 16px
+	+r(767)
+		font-size: 14px
 
 .row
 	+clr
@@ -253,6 +273,8 @@ sup
 		margin-bottom: 5px
 		&.is-right
 			text-align: right
+		&_mt
+			margin-top: 30px
 		.form-error
 			font-size: 14px
 			//color: #e1000a
@@ -298,6 +320,8 @@ sup
 	box-shadow: 0 0 0 10px rgba(#fff, .4)
 	+vertical
 	font-weight: 100
+	&:hover
+		background-image: radial-gradient(50% 50%,lighten($red,8) 0%, darken($red, 28) 100%)
 	&.is-fixed
 		position: fixed
 	span
@@ -307,3 +331,220 @@ sup
 		display: inline-block
 		vertical-align: middle
 		text-shadow: 2px 2px 4px rgba(158, 104, 29, 0.8)
+
+.popup-layer
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-repeat: no-repeat
+	background-size: cover
+	z-index: 199
+	&:after
+		content: ''
+		background: url('../img/layer.png') no-repeat center center
+		background-size: cover
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 15px
+	background-repeat: no-repeat
+	background-size: cover
+	z-index: 200
+
+	//overflow: auto
+	+vertical
+	&__in
+		display: inline-block
+		vertical-align: middle
+		font-size: 18px
+		position: relative
+		padding: 50px 0 50px
+		max-width: 100%
+		+rh(900)
+			padding: 25px 0
+		.close-btn
+			position: absolute
+			right: 0
+			top: 0
+	&__logo
+		font-size: 200px
+		color: $accent
+		margin-bottom: 30px
+		+rh(900)
+			font-size: 150px
+	&__form
+		width: 360px
+		max-width: 100%
+		margin: 30px auto 0
+		+rh(900)
+			margin-top: 10px
+		.field
+			text-align: left
+		.input-txt
+			font-size: 18px
+			+placeholder
+				color: #6b6b6b
+				+light
+				-webkit-font-smoothing: antialiased
+
+	&__title
+		color: #fff
+		+light
+		font-size: 30px
+		margin-bottom: 30px
+		-webkit-font-smoothing: antialiased
+	.menu
+		margin-bottom: 55px
+		margin-top: 30px
+		+rh(900)
+			margin-bottom: 35px
+			margin-top: 10px
+			a
+				font-size: 20px
+
+.popup-gallery
+	.popup__in
+		+rh(768)
+		width: 1000px
+
+.gallery
+	margin: 0 auto
+	padding: 0 150px
+	&-title
+		font-size: 36px
+		text-transform: uppercase
+		text-align: center
+		+sbold
+		margin-bottom: 30px
+		color: #fff
+	img
+		margin: 0 auto
+	.slick-dots
+		bottom: -50px
+		li.is-active
+			button
+		button
+			font-size: 24px
+			line-height: 1
+			width: auto
+			height: auto
+			border-radius: 0
+			background: transparent !important
+			+reg
+			+sbold
+			box-shadow: none
+			color: #fff
+
+.slick-dots li.slick-active button
+	text-decoration: underline
+	color: $accent
+
+.slick
+	&-arrow
+		+hide-text
+		&:before
+			content: ''
+	&-next
+		+arr(62, 70, $accent,r)
+	&-prev
+		+arr(62, 70, $accent,l)
+.menu
+	width: 468px
+	margin: 0 auto
+	text-align: center
+	+rh(900)
+		width: 350px
+	li
+		list-style-type: none
+		a
+			font-size: 30px
+			display: block
+			padding: em(4,30) 15px
+			color: #fff
+			transition: color .3s, background .3s
+			text-transform: uppercase
+			margin-bottom: 4px
+			&:hover
+				color: #000
+				background: #fff
+
+.close-btn
+	cursor: pointer
+	background: transparent
+	color: #fff
+	font-size: 24px
+	text-align: center
+	padding: em(12, 24)
+	border: 1px solid #fff
+
+.callbackform
+	padding: 42px 85px
+	border: 4px solid #9b8056
+	border-top: 0
+	position: relative
+	+rh(900)
+		padding: 41px 67px
+	&:before
+		content: ''
+		height: 4px
+		width: 25px
+		position: absolute
+		top: 0
+		left: 0
+		background: #9b8056
+	&:after
+		content: ''
+		height: 4px
+		width: 25px
+		position: absolute
+		top: 0
+		right: 0
+		background: #9b8056
+	&__text
+		color: #9b8056
+		position: absolute
+		+sbold
+		font-size: 24px
+		left: 0
+		right: 0
+		bottom: 100%
+		line-height: 1
+		margin-bottom: -.3em
+		text-align: center
+		+rh(900)
+			font-size: 18px
+	&__btn
+		width: 468px
+		max-width: 100%
+		+rh(900)
+			width: 350px
+			.button
+				font-size: 20px
+				padding: 5px 0
+
+.button
+	font-size: 30px
+	display: block
+	padding: em(4,30) 15px
+	color: #fff
+	transition: color .3s, background .3s
+	text-transform: uppercase
+	margin-bottom: 4px
+	background: $accent
+	width: 100%
+	+reg
+	font-weight: 300
+	&:hover
+		background: $red
+

@@ -115,7 +115,7 @@
                 <div class="advantage__more">
                   <div class="advantage__title">
                     <h3 class="h3">7 уровневая
-                      <div>	система безопасности</div>
+                      <div>   система безопасности</div>
                     </h3>
                   </div>
                   <div class="advantage__text">
@@ -381,88 +381,88 @@
               function initMap() {
               
               
-              	var map = new google.maps.Map(document.getElementById('map'), {
-              		zoom: 15,
-              		center: {lat: 43.199684, lng: 76.866439},
-              		zoomControl: true,
-              		scrollwheel: false,
-              		mapTypeControlOptions: {
-              		mapTypeIds: [google.maps.MapTypeId.ROADMAP]
-              		}
-              	});
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 15,
+                      center: {lat: 43.199684, lng: 76.866439},
+                      zoomControl: true,
+                      scrollwheel: false,
+                      mapTypeControlOptions: {
+                          mapTypeIds: [google.maps.MapTypeId.ROADMAP]
+                      }
+                  });
               
-              	var iconBase = 'img/markers/';
-              	var marker = new google.maps.Marker({
-              		position: {lat: 43.197384, lng: 76.866439},
-              		map: map,
-              		icon: iconBase + 'main.png'
-              	});
+                  var iconBase = 'img/markers/';
+                  var marker = new google.maps.Marker({
+                      position: {lat: 43.197384, lng: 76.866439},
+                      map: map,
+                      icon: iconBase + 'main.png'
+                  });
               
-              	var marker1 = new google.maps.Marker({
-              		position: {lat: 43.1942427, lng: 76.8862575},
-              		map: map,
-              		icon: iconBase + 'park.png'
-              	});
-              	var marker2 = new google.maps.Marker({
-              		position: {lat: 43.194227, lng: 76.8812793},
-              		map: map,
-              		icon: iconBase + 'study.png'
-              	});
+                  var marker1 = new google.maps.Marker({
+                      position: {lat: 43.1942427, lng: 76.8862575},
+                      map: map,
+                      icon: iconBase + 'park.png'
+                  });
+                  var marker2 = new google.maps.Marker({
+                      position: {lat: 43.194227, lng: 76.8812793},
+                      map: map,
+                      icon: iconBase + 'study.png'
+                  });
               
-              	var marker3 = new google.maps.Marker({
-              		position: {lat: 43.20031, lng: 76.8869005},
-              		map: map,
-              		icon: iconBase + 'mall.png'
-              	});
+                  var marker3 = new google.maps.Marker({
+                      position: {lat: 43.20031, lng: 76.8869005},
+                      map: map,
+                      icon: iconBase + 'mall.png'
+                  });
               
-              	var marker4 = new google.maps.Marker({
-              		position: {lat: 43.2013722, lng: 76.8706879},
-              		map: map,
-              		icon: iconBase + 'study.png'
-              	});
+                  var marker4 = new google.maps.Marker({
+                      position: {lat: 43.2013722, lng: 76.8706879},
+                      map: map,
+                      icon: iconBase + 'study.png'
+                  });
               
-              	var marker5 = new google.maps.Marker({
-              		position: {lat: 43.198605, lng: 76.8665032},
-              		map: map,
-              		icon: iconBase + 'hotel.png'
-              	});
+                  var marker5 = new google.maps.Marker({
+                      position: {lat: 43.198605, lng: 76.8665032},
+                      map: map,
+                      icon: iconBase + 'hotel.png'
+                  });
               
-              	var marker6 = new google.maps.Marker({
-              		position: {lat: 43.1953278, lng: 76.8671147},
-              		map: map,
-              		icon: iconBase + 'child-clinic.png'
-              	});
+                  var marker6 = new google.maps.Marker({
+                      position: {lat: 43.1953278, lng: 76.8671147},
+                      map: map,
+                      icon: iconBase + 'child-clinic.png'
+                  });
               
-              	var marker7 = new google.maps.Marker({
-              		position: {lat: 43.1808046, lng: 76.8718456 },
-              		map: map,
-              		icon: iconBase + 'golf.png'
-              	});
+                  var marker7 = new google.maps.Marker({
+                      position: {lat: 43.1808046, lng: 76.8718456},
+                      map: map,
+                      icon: iconBase + 'golf.png'
+                  });
               
-              	var marker8 = new google.maps.Marker({
-              		position: {lat: 43.1961642, lng: 76.8659664 },
-              		map: map,
-              		icon: iconBase + 'clinic.png'
-              	});
+                  var marker8 = new google.maps.Marker({
+                      position: {lat: 43.1961642, lng: 76.8659664},
+                      map: map,
+                      icon: iconBase + 'clinic.png'
+                  });
               
-              	var marker9 = new google.maps.Marker({
-              		position: {lat: 43.2015913, lng: 76.873698},
-              		map: map,
-              		icon: iconBase + 'demirel.png'
-              	});
+                  var marker9 = new google.maps.Marker({
+                      position: {lat: 43.2015913, lng: 76.873698},
+                      map: map,
+                      icon: iconBase + 'demirel.png'
+                  });
               
-              	var marker10 = new google.maps.Marker({
-              		position: {lat: 43.2015259, lng: 76.8916723},
-              		map: map,
-              		icon: iconBase + 'Fitnation.png'
-              	});
+                  var marker10 = new google.maps.Marker({
+                      position: {lat: 43.2015259, lng: 76.8916723},
+                      map: map,
+                      icon: iconBase + 'Fitnation.png'
+                  });
               
-              	//var infowindow = new google.maps.InfoWindow({
-              	//	content: '50 CHIN SWEE ROAD<br>#09-04 THONG CHAI BUILDING<br>SINGAPORE 169874'
-              	//});
-              	//marker.addListener('click', function() {
-              	//	infowindow.open(map, marker);
-              	//});
+                  //var infowindow = new google.maps.InfoWindow({
+                  //	content: '50 CHIN SWEE ROAD<br>#09-04 THONG CHAI BUILDING<br>SINGAPORE 169874'
+                  //});
+                  //marker.addListener('click', function() {
+                  //	infowindow.open(map, marker);
+                  //});
               }
             </script>
             <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCPLx_osAJ33YNibIjaqX9uH5kbYIlNJVY&amp;callback=initMap" async defer></script>
@@ -538,6 +538,36 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div style="background-image: url('img/popup-bg.jpg'); display:block" class="popup-layer"></div>
+      <div style="display: block" class="popup js-popup">
+        <div class="popup__in">
+          <button class="close-btn icon-close js-close-popup"></button>
+          <div class="popup__logo icon-logo"></div>
+          <div class="popup__form">
+            <div class="popup__title">
+              Оставьте свои данные,
+              мы свяжемся с Вами
+            </div>
+            <form id="popup-form" class="form">
+              <div class="field">
+                <input type="text" name="name" placeholder="Ваше Имя" data-validation-error-msg="Обязательное поле" data-validation="required" class="input-txt">
+              </div>
+              <div class="field">
+                <input type="text" name="email" placeholder="Ваш E-mail" data-validation-error-msg="Обязательное поле" data-validation="required" class="input-txt">
+              </div>
+              <div class="field">
+                <input type="tel" name="tel" placeholder="Ваш номер телефона" data-validation-error-msg="Обязательное поле" data-validation="required" class="input-txt js-phone">
+              </div>
+              <div class="field">
+                <textarea rows="3" name="comment" placeholder="Комментарии" class="input-txt"></textarea>
+              </div>
+              <div class="field field_mt">
+                <button class="button">ОТПРАВИТЬ</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

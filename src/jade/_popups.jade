@@ -1,0 +1,86 @@
+.popup-layer(style="background-image: url('img/popup-bg.jpg'); display:none")
+.popup.js-popup(style="display: none")
+    .popup__in
+        button.close-btn.icon-close.js-close-popup
+        .popup__logo.icon-logo
+        nav.menu
+            li
+                a.js-link(href="#top")
+                    | Главная
+            li
+                a.js-link(href="#advantages")
+                    | Преимущества
+            li
+                a.js-link(href="#gallery")
+                    | Галерея
+            li
+                a.js-link(href="#apart")
+                    | Апартаменты
+            li
+                a.js-link(href="#structure")
+                    | инфраструктура
+            li
+                a.js-link(href="#builder")
+                    | ЗАСТРОЙЩИК
+            li
+                a.js-link(href="#contacts")
+                    | офис продаж
+
+        .callbackform
+            .callbackform__text
+                | Оставьте свои данные, мы свяжемся с Вами
+            .callbackform__btn
+                button.button
+                    | Обратный звонок
+
+.popup.js-popup(style="display: none")
+    .popup__in
+         button.close-btn.icon-close.js-close-popup
+         .popup__logo.icon-logo
+         .popup__form
+             .popup__title
+                |Оставьте свои данные,
+                |мы свяжемся с Вами
+             form.form#popup-form
+                .field
+                    input.input-txt(type="text", name="name",placeholder="Ваше Имя", data-validation-error-msg="Обязательное поле" data-validation="required")
+                .field
+                    input.input-txt(type="text" name="email", placeholder="Ваш E-mail", data-validation-error-msg="Обязательное поле" data-validation="required")
+                .field
+                    input.input-txt.js-phone(type="tel", name="tel",placeholder="Ваш номер телефона", data-validation-error-msg="Обязательное поле" data-validation="required")
+                .field
+                    textarea.input-txt(rows="3", name="comment", placeholder="Комментарии")
+                .field.field_mt
+                    button.button
+                        |ОТПРАВИТЬ
+
+
+
+.popup.popup-gallery.js-popup(style="display: block")
+    .popup__in
+        button.close-btn.icon-close.js-close-popup
+        .gallery-title
+            | ГАЛЕРЕЯ
+        .gallery.js-gallery
+            div
+                img(src="img/jpg_01.jpg")
+            div
+                img(src="img/jpg_02.jpg")
+            div
+                img(src="img/jpg_03.jpg")
+            div
+                img(src="img/jpg_04.jpg")
+            div
+                img(src="img/jpg_05.jpg")
+            div
+                img(src="img/jpg_06.jpg")
+            div
+                img(src="img/jpg_07.jpg")
+            div
+                img(src="img/jpg_08.jpg")
+            div
+                img(src="img/jpg_09.jpg")
+            div
+                img(src="img/jpg_10.jpg")
+            div
+                img(src="img/jpg_11.jpg")
