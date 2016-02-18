@@ -21,10 +21,28 @@
 		left: 0
 		top: 50%
 		margin-top: -.50em
+		+r(767)
+			font-size: 35px
+			text-align: left
+			margin-left: 10px
 	&__btn
 		display: inline-block
 		vertical-align: middle
 		text-align: center
+		position: relative
+		z-index: 5
+		.icon-recall
+			display: none
+			font-size: 25px
+			color: $accent
+		&:before
+			display: none
+		+r(550)
+			.icon-recall
+				display: block
+			.btn
+				display: none
+
 	.callback
 		position: absolute
 		right: 0
@@ -38,7 +56,11 @@
 		font-size: 24px
 		margin-right: 15px
 		line-height: 1
-
+		+r(950)
+			font-size: 14px
+		+r(785)
+			//vertical-align: bottom
+			display: none
 .screen
 	+vertical
 	position: relative
@@ -50,6 +72,8 @@
 		height: auto
 	+rh(620)
 		height: auto
+	&__in
+		padding-top: 10px
 	&__bg
 		position: absolute
 		left: 0
@@ -87,6 +111,9 @@
 		color: #fff
 		+r(1380)
 			font-size: 150px
+		+r(767)
+			font-size: 75px
+
 
 	h1, .h1
 		margin: .3em 0
@@ -98,6 +125,8 @@
 		text-align: left
 		display: table
 		position: relative
+		+r(767)
+			padding: 20px
 		.col1
 			display: table-cell
 			width: 50%
@@ -106,12 +135,18 @@
 				display: inline-block
 				width: 100%
 				height: 230px
+			+r(767)
+				height: auto
+				//min-height: 200px
 		.box-video
 			position: absolute
 			top: 0
 			left: 0
 			right: 0
 			bottom: 0
+			+r(767)
+				position: relative
+				height: 150px
 	&__icon
 		margin: 30px 0 25px
 		text-align: center
@@ -125,8 +160,11 @@
 		.box
 			font-size: 14px
 	+r(767)
+		.screen__section
+			padding: 0 20px
 		.box
-			padding: 20px
+			padding: 10px
+			font-size: 12px
 
 .box
 	color: #fff
@@ -137,12 +175,17 @@
 		background: transparent
 	h2, .h2
 		margin-bottom: 30px
+		+r(767)
+			margin-bottom: 15px
 	&__text
 		+light
 		letter-spacing: 1px
 		font-weight: 100
 		+ .link-more
 			margin-top: 30px
+			+r(767)
+				margin-top: 15px
+
 
 .box-video
 	background-size: cover
@@ -161,7 +204,10 @@
 	+vertical
 	z-index: 1
 	+r(1100)
-		height: 350px
+		height: auto
+		padding-bottom: 150px
+	+r(767)
+		padding-bottom: 75px
 	&:after
 		content: ''
 		background: url('../img/section-bg.png') no-repeat top left
@@ -190,6 +236,9 @@
 			float: none
 			text-align: center
 			width: 100%
+		+r(767)
+			font-size: 14px
+			padding: 10px
 	&_right
 		.box
 			float: right
@@ -201,8 +250,10 @@
 		+r(1100)
 			display: block
 			top: auto
-			bottom: 30px
+			bottom: 15px
 			margin-top: 0
+		+r(767)
+			bottom: 15px
 
 .advantage
 	position: relative
@@ -288,7 +339,7 @@
 							background: $accent
 		+r(950)
 			width: 50%
-		+r(767)
+		+r(650)
 			width: 100%
 .item
 	position: relative
@@ -369,7 +420,9 @@
 
 #map
 	height: 500px
-	
+	+r(1023)
+		height: 350px
+
 .map
 	position: relative
 	&__header
@@ -403,14 +456,17 @@
 		color: $accent
 		font-size: 93px
 		margin-top: -13px
-		margin-bottom: 20px
+		margin-bottom: 17px
 	&__text
 		padding-right: percentage( 140 / 318)
 		p
-			margin-bottom: 20px
+			margin-bottom: 15px
+			line-height: 1.2
 	h1, .h1
 		margin-top: 0
 		text-align: left
+	h2, .h2
+		margin-bottom: 17px
 	&__phone
 		a
 			color: #fff
@@ -423,6 +479,32 @@
 		.icon-phone
 			font-size: 30px
 			margin-right: 10px
+
+.apart
+	.col3
+		+r(850)
+			width: 50%
+		+r(420)
+			width: 100%
+
+.footer
+	.col-sm
+		+r(1024)
+			width: 40%
+		+r(950)
+			width: 50%
+		+r(850)
+			width: 100%
+	.col-md
+		+r(1024)
+			width: 60%
+		+r(950)
+			width: 50%
+		+r(800)
+			width: 100%
+
+
+
 
 
 

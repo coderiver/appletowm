@@ -1,5 +1,6 @@
-.popup-layer(style="background-image: url('img/popup-bg.jpg'); display:none")
-.popup.js-popup(style="display: none")
+.popup-layer.js-layer(style="background-image: url('img/popup-bg.jpg');")
+
+.popup.js-popup(data-popup="popup-menu")
     .popup__in
         button.close-btn.icon-close.js-close-popup
         .popup__logo.icon-logo
@@ -30,10 +31,10 @@
             .callbackform__text
                 | Оставьте свои данные, мы свяжемся с Вами
             .callbackform__btn
-                button.button
+                button.button.js-show-popup(data-popup="popup-callback")
                     | Обратный звонок
 
-.popup.js-popup(style="display: none")
+.popup.js-popup(data-popup="popup-callback")
     .popup__in
          button.close-btn.icon-close.js-close-popup
          .popup__logo.icon-logo
@@ -54,14 +55,12 @@
                     button.button
                         |ОТПРАВИТЬ
 
-
-
-.popup.popup-gallery.js-popup(style="display: block")
+.popup.popup-gallery.js-popup(data-popup="popup-gallery")
     .popup__in
         button.close-btn.icon-close.js-close-popup
         .gallery-title
             | ГАЛЕРЕЯ
-        .gallery.js-gallery
+        .gallery-m.js-gallery
             div
                 img(src="img/jpg_01.jpg")
             div

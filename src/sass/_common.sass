@@ -78,6 +78,8 @@ body
 	width: 1710px
 	@extend %in
 	padding: 0 80px
+	+r(767)
+		padding: 0 10px
 
 .l-center-md
 	width: 1060px
@@ -99,6 +101,9 @@ a
 	border-radius: 50%
 	background: rgba($primary, .6)
 	+tr(background .3s)
+	+r(767)
+		width: 35px
+		height: 35px
 	&:hover
 		background: $red
 	&:after
@@ -108,6 +113,10 @@ a
 		left: 50%
 		top: 50%
 		margin: -13.5px 0 0 -8.5px
+		+r(767)
+			+arr(12, 15, #fff, r)
+			margin: -7.5px 0 0 -4px
+
 
 .btn
 	line-height: 1
@@ -174,6 +183,8 @@ a
 	color: $accent
 	display: inline-block
 	+light
+	+r(767)
+		font-size: 14px
 
 .logo-woolim
 	display: inline-block
@@ -247,6 +258,12 @@ h4, .h4
 .col3
 	float: left
 	width: 33.33333%
+.gallery
+	.col3
+		+r(960)
+			width: 50%
+		+r(767)
+			width: 100%
 
 .col-sm
 	float: left
@@ -320,6 +337,13 @@ sup
 	box-shadow: 0 0 0 10px rgba(#fff, .4)
 	+vertical
 	font-weight: 100
+	+r(767)
+		width: 60px
+		height: 60px
+		margin-left: -30px
+		margin-top: -30px
+		box-shadow: 0 0 0 5px rgba(#fff, .4)
+
 	&:hover
 		background-image: radial-gradient(50% 50%,lighten($red,8) 0%, darken($red, 28) 100%)
 	&.is-fixed
@@ -331,8 +355,17 @@ sup
 		display: inline-block
 		vertical-align: middle
 		text-shadow: 2px 2px 4px rgba(158, 104, 29, 0.8)
+		i
+			display: none
+		+r(767)
+			font-size: 0
+			i
+				display: block
+				font-size: 24px
+
 
 .popup-layer
+	display: none
 	position: fixed
 	top: 0
 	left: 0
@@ -361,8 +394,9 @@ sup
 	background-repeat: no-repeat
 	background-size: cover
 	z-index: 200
-
-	//overflow: auto
+	display: none
+	+rh(600)
+		overflow: auto
 	+vertical
 	&__in
 		display: inline-block
@@ -383,6 +417,8 @@ sup
 		margin-bottom: 30px
 		+rh(900)
 			font-size: 150px
+		+r(700)
+			font-size: 75px
 	&__form
 		width: 360px
 		max-width: 100%
@@ -397,6 +433,11 @@ sup
 				color: #6b6b6b
 				+light
 				-webkit-font-smoothing: antialiased
+			+r(767)
+				font-size: 16px
+		+r(767)
+			.button
+				font-size: 18px
 
 	&__title
 		color: #fff
@@ -404,6 +445,8 @@ sup
 		font-size: 30px
 		margin-bottom: 30px
 		-webkit-font-smoothing: antialiased
+		+r(767)
+			font-size: 18px
 	.menu
 		margin-bottom: 55px
 		margin-top: 30px
@@ -412,43 +455,54 @@ sup
 			margin-top: 10px
 			a
 				font-size: 20px
+		+r(767)
+			a
+				font-size: 16px
 
 .popup-gallery
 	.popup__in
 		+rh(768)
 		width: 1000px
 
-.gallery
-	margin: 0 auto
-	padding: 0 150px
-	&-title
+	.gallery-title
 		font-size: 36px
 		text-transform: uppercase
 		text-align: center
 		+sbold
 		margin-bottom: 30px
 		color: #fff
-	img
+		+r(767)
+			font-size: 18px
+	.gallery-m
 		margin: 0 auto
-	.slick-dots
-		bottom: -50px
-		li.is-active
+		padding: 0 150px
+		+r(767)
+			padding:  0
+			.slick-arrow
+				display: none !important
+		img
+			margin: 0 auto
+		.slick-dots
+			bottom: -50px
+			li.is-active
+				button
 			button
-		button
-			font-size: 24px
-			line-height: 1
-			width: auto
-			height: auto
-			border-radius: 0
-			background: transparent !important
-			+reg
-			+sbold
-			box-shadow: none
-			color: #fff
+				font-size: 24px
+				line-height: 1
+				width: auto
+				height: auto
+				border-radius: 0
+				background: transparent !important
+				+reg
+				+sbold
+				box-shadow: none
+				color: #fff
+				+r(767)
+					font-size: 18px
 
-.slick-dots li.slick-active button
-	text-decoration: underline
-	color: $accent
+		.slick-dots li.slick-active button
+			text-decoration: underline
+			color: $accent
 
 .slick
 	&-arrow
@@ -457,12 +511,17 @@ sup
 			content: ''
 	&-next
 		+arr(62, 70, $accent,r)
+		+r(767)
+			border-width: 17px 0 17px 31px
 	&-prev
 		+arr(62, 70, $accent,l)
+		+r(767)
+			border-width: 17px 31px 17px 0
 .menu
 	width: 468px
 	margin: 0 auto
 	text-align: center
+	max-width: 100%
 	+rh(900)
 		width: 350px
 	li
@@ -495,6 +554,8 @@ sup
 	position: relative
 	+rh(900)
 		padding: 41px 67px
+	+r(767)
+		padding: 20px
 	&:before
 		content: ''
 		height: 4px
@@ -503,6 +564,8 @@ sup
 		top: 0
 		left: 0
 		background: #9b8056
+		+r(767)
+			width: 5px
 	&:after
 		content: ''
 		height: 4px
@@ -511,6 +574,8 @@ sup
 		top: 0
 		right: 0
 		background: #9b8056
+		+r(767)
+			width: 5px
 	&__text
 		color: #9b8056
 		position: absolute
@@ -524,6 +589,8 @@ sup
 		text-align: center
 		+rh(900)
 			font-size: 18px
+		+r(767)
+			font-size: 12px
 	&__btn
 		width: 468px
 		max-width: 100%
@@ -532,6 +599,9 @@ sup
 			.button
 				font-size: 20px
 				padding: 5px 0
+		+r(767)
+			.button
+				font-size: 16px
 
 .button
 	font-size: 30px

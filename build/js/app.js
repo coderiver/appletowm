@@ -118,25 +118,25 @@ $(document).ready(function() {
 	//	return this;
 	//
 	//}
-	////
+	//
 	//var fixedBtn = new FixedOnCenter($('.js-fixed-btn'));
 	//fixedBtn();
 	//console.log(fixedBtn.sayHi())
-	//
+
 	var center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2);
 	var endPoint = $('.js-section-center').offset().top + ($('.js-section-center').outerHeight() / 2);
 
 	function makeCenter() {
 
-		if($(window).width() <= 1100) {
-			$('.js-fixed-btn').removeClass('is-fixed');
-			$('.js-fixed-btn').css('top', '50%');
-			return ;
-		}
+		//if($(window).width() <= 1100) {
+		//	$('.js-fixed-btn').removeClass('is-fixed');
+		//	$('.js-fixed-btn').css('top', '50%');
+		//	return ;
+		//}
 
-		var center2 = ($('.js-section-center').offset().top + $('.js-section-center').outerHeight() / 2) - ($(window).outerHeight() / 2) ;
+		var center2 = ($('.js-section-center').offset().top + $('.js-section-center').outerHeight() / 2) - ($(window).outerHeight() / 2);
 
-		if($(window).scrollTop() >= center) {
+		if($(window).scrollTop() >= center && $(window).width() > 1100) {
 			$('.js-fixed-btn').addClass('is-fixed');
 			$('.js-fixed-btn').css('top', '50%');
 
@@ -144,7 +144,7 @@ $(document).ready(function() {
 			$('.js-fixed-btn').removeClass('is-fixed');
 		}
 
-		if($(window).scrollTop() >= center2) {
+		if($(window).scrollTop() >= center2 && $(window).width() > 1100) {
 			$('.js-fixed-btn').removeClass('is-fixed');
 			$('.js-fixed-btn').css('top', center2 + 30);
 		}
@@ -154,14 +154,17 @@ $(document).ready(function() {
 	$(window).on('scroll resize', makeCenter);
 
 	$('.js-gallery').slick({
-		fade: true
+		fade: true,
+		dots: true,
+		arrows: true
 	});
 
 	function initSlider() {
 		$('.js-gallery').slick('unslick');
 		$('.js-gallery').slick({
 			fade: true,
-			dots: true
+			dots: true,
+			arrows: true
 		});
 	}
 	initSlider();
@@ -169,17 +172,90 @@ $(document).ready(function() {
 	//console.log(btn.sector);
 
 
-	//$('.js-link').on('click', function(){
-	//	var link = $(this).attr('href');
-	//	var height = $('.header').outerHeight();
-	//	$('html, body').animate({
-	//			scrollTop: $(link).offset().top - height
-	//		}, {
-	//			duration: 500,
-	//		},
-	//		$('.js-menu').removeClass('is-open')
-	//	);
+	$('.js-link').on('click', function(){
+		var link = $(this).attr('href');
+		var height = $('.header').outerHeight();
+		$('html, body').animate({
+				scrollTop: $(link).offset().top - height
+			}, {
+				duration: 200,
+			},
+			setTimeout(function(){
+				$('.js-popup').fadeOut();
+				$('.js-layer').fadeOut();
+
+			},200)
+
+		);
+
+		return false;
+	});
+
+	//open-popup
+	$('.js-show-popup').on('click', function() {
+		var link = $(this).data('popup');
+		var popup = $('.js-popup[data-popup="' + link + '"]');
+
+		$('.js-popup').fadeOut();
+		$('.js-layer').fadeIn();
+		popup.fadeIn();
+		if(popup.hasClass('popup-gallery')) {
+			initSlider();
+		}
+		return false;
+	});
+
+	//close-popup
+	$('.js-close-popup').on('click', function() {
+		var popup = $(this).parents('.js-popup');
+		popup.fadeOut();
+		$('.js-layer').fadeOut();
+		return false;
+	});
+
+
+
+
+	// scroll button 'book my visit'
+	//function buttonFixed() {
+	//	var win = $(window)
+	//		,
+	//		center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2)
+	//		,
+	//		button = $('.js-fixed-btn')
+	//		,
+	//		buttonHeight = button.outerHeight()
+	//		,
+	//		scrollPos = win.scrollTop()
+	//		,
+	//		bottomPos = $('.js-section-center').offset().top
+	//		,
+	//		absolutePos = $('.js-section-center').offset().top + $('.js-section-center').outerHeight()/2 - buttonHeight;
 	//
-	//	return false;
-	//});
+	//	if (scrollPos > center && scrollPos < bottomPos && win.width() > 1100) {
+	//		button.addClass('is-fixed').css('top', '50%');
+	//		console.log('hi');
+	//	} else if (scrollPos < center || win.width() < 1100) {
+	//		button.removeClass('is-fixed').css('top', '50%');
+	//		console.log('hi2');
+	//
+	//	} else {
+	//		button.removeClass('is-fixed').css('top', absolutePos);
+	//		console.log('hi3');
+	//
+	//	}
+	//}
+	//
+	//buttonFixed();
+	//
+	//// scroll and resize
+	//(function() {
+	//	var win = $(window);
+	//
+	//	win.scroll(function() {
+	//		buttonFixed();
+	//	});
+	//})();
+
+
 });

@@ -10,12 +10,13 @@ block content
 				i.icon-vk
 				a.header__logo.icon-logo(href="#")
 				.header__btn
-					button.btn.btn_mod.btn_bg
+					a.icon-recall.js-show-popup(href="#", data-popup="popup-callback")
+					button.btn.btn_mod.btn_bg.js-show-popup(data-popup="popup-callback")
 						| Обратный звонок
 				.callback
 					a.callback__link(href="tel:+7(727)2277777")
 						| +7 (727) 227-77-77
-					button.hamburger
+					button.hamburger.js-show-popup(data-popup="popup-menu")
 						span
 	.l-center
 		.screen#top
@@ -28,9 +29,10 @@ block content
 				h1.h1
 					| Жилой комплекс
 				.screen__section
-					button.call-btn.js-fixed-btn
+					button.call-btn.js-fixed-btn.js-show-popup(data-popup="popup-callback")
 						span
 							| ОБРАТНЫЙ ЗВОНОК
+							i.icon-recall
 					.col1
 						.box
 							h2.h2
@@ -60,9 +62,10 @@ block content
 						| и встроенной мебелью. Качественный
 						| ремонт без потери времени и нервов.
 						| Гарантия на ремонт и технику.
-				button.call-btn
+				button.call-btn.js-show-popup(data-popup="popup-callback")
 					span
 						| ОБРАТНЫЙ ЗВОНОК
+						i.icon-recall
 		section.section.section_right.js-section-center(style="background-image: url('img/section-2.jpg')")
 			.section__in
 				.box.box_mod
@@ -74,9 +77,10 @@ block content
 						| Допустимые нагрузки  - на 150% выше
 						| установленных норм РК. Подтверждено
 						| экспертами Кореи и Японии.
-				button.call-btn
+				button.call-btn.js-show-popup(data-popup="popup-callback")
 					span
 						| ОБРАТНЫЙ ЗВОНОК
+						i.icon-recall
 		h1.h1#advantages
 			| Преимущества
 		.advantages
@@ -202,7 +206,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-1.jpg")
@@ -212,7 +216,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-2.jpg")
@@ -222,7 +226,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-3.jpg")
@@ -232,7 +236,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-4.jpg")
@@ -242,7 +246,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-5.jpg")
@@ -252,7 +256,7 @@ block content
 							.item__more-in
 								h3.h3
 									| Показать больше фотографий
-								a(href="#")
+								a.js-show-popup(href="#", data-popup="popup-gallery")
 									| в полноэкранной галереи
 						.item__img
 							img(src="img/gallery-6.jpg")
@@ -260,7 +264,7 @@ block content
 		h1.h1#apart
 			| Апартаменты
 
-		.l-center-md
+		.l-center-md.apart
 			.row-pad
 				.col3
 					a.block(href="files/B2.pdf" target="_blank")
@@ -457,7 +461,7 @@ block content
 					}
 				script( src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCPLx_osAJ33YNibIjaqX9uH5kbYIlNJVY&callback=initMap", async, defer)
 
-		h1.h1.h1_light#contacts
+		h1.h1.h1_light#builder
 			| Застройщик
 		.l-center-sm
 			.footer
@@ -477,7 +481,7 @@ block content
 							| строительной отрасли. В Казахстане проект Apple Town Был удостоен
 							| Золотой медали Союза архитекторов, и  дважды в 2014 и 2013гг признавался
 							| «Лучшим жилым комплексом Казахстана» ассоциацией риэлторов ОАРК.
-				.row
+				.row#contacts
 					.col-sm
 						a.footer__logo.icon.icon-logo(href="#")
 						h2.h2.h2_light
@@ -519,7 +523,7 @@ block content
 									button.btn.btn_bg
 										| ОТПРАВИТЬ
 
-
+	include _popups.jade
 
 
 
