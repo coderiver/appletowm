@@ -54,23 +54,24 @@ $(document).ready(function() {
 			form: '#popup-form',
 			onSuccess: function() {
 				post_data = {
-					'name': $('#popup-form input[name=name]').val(),
-					'tel': $('#popup-form input[name=tel]').val()
+					'name': $('#form input[name=name]').val(),
+					'tel': $('#form input[name=tel]').val(),
+					'email': $('#form input[name=email]').val(),
+					'comment': $('#form textarea[name=comment]').val()
 				};
 				// Ajax post data to server
 				$.post('send.php', post_data, function(response) {
 					if (response.type == 'error') {
 						console.log('error');
 					}
-					//else {
-					//	// reset values in all input fields
-					//	popup.removeClass('is-open');
-					//	thanks.addClass('is-open');
-					//	$('#popup-form').get(0).reset();
-					//	setTimeout(function() {
-					//		thanks.removeClass('is-open');
-					//	}, 2000);
-					//}
+					else {
+						// reset values in all input fields
+						thanks.addClass('is-open');
+						$('#popup-form').get(0).reset();
+						setTimeout(function() {
+							thanks.fadeOut();
+						}, 2000);
+					}
 				}, 'json');
 				return false;
 			}
@@ -89,13 +90,13 @@ $(document).ready(function() {
 				// Ajax post data to server
 				$.post('send.php', post_data, function(response) {
 					if (response.type == 'error') {}
-					//else {
-					//	thanks.addClass(500);
-					//	$('#form').get(0).reset();
-					//	setTimeout(function() {
-					//		thanks.removeClass('is-open');
-					//	}, 2000);
-					//}
+					else {
+						//thanks.addClass(500);
+						$('#form').get(0).reset();
+						setTimeout(function() {
+							thanks.fadeOut();
+						}, 2000);
+					}
 				}, 'json');
 				return false;
 			}
@@ -103,55 +104,37 @@ $(document).ready(function() {
 	}());
 
 	// callback-btn
+	(function (){
+		var center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2);
+		var endPoint = $('.js-section-center').offset().top + ($('.js-section-center').outerHeight() / 2);
+		var center2 = ($('.js-section-center').offset().top  +$('.js-section-center').outerHeight() / 2) - ($(window).outerHeight() / 2);
+		function makeCenter() {
+			//if($(window).width() <= 1100) {
+			//	$('.js-fixed-btn').removeClass('is-fixed');
+			//	$('.js-fixed-btn').css('top', '50%');
+			//	return ;
+			//}
 
-	//function FixedOnCenter(sector) {
-	//	this.sector = sector;
-	//
-	//	return function() {
-	//
-	//		this.sayHi =  function() {
-	//			console.log(this);
-	//		}
-	//
-	//
-	//	}
-	//	return this;
-	//
-	//}
-	//
-	//var fixedBtn = new FixedOnCenter($('.js-fixed-btn'));
-	//fixedBtn();
-	//console.log(fixedBtn.sayHi())
 
-	var center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2);
-	var endPoint = $('.js-section-center').offset().top + ($('.js-section-center').outerHeight() / 2);
+			if($(window).scrollTop() >= center && $(window).width() > 1100) {
 
-	function makeCenter() {
+				$('.js-fixed-btn').addClass('is-fixed');
+				$('.js-fixed-btn').css('top', '50%');
 
-		//if($(window).width() <= 1100) {
-		//	$('.js-fixed-btn').removeClass('is-fixed');
-		//	$('.js-fixed-btn').css('top', '50%');
-		//	return ;
-		//}
+			} else {
+				$('.js-fixed-btn').removeClass('is-fixed');
+			}
 
-		var center2 = ($('.js-section-center').offset().top + $('.js-section-center').outerHeight() / 2) - ($(window).outerHeight() / 2);
+			if($(window).scrollTop() >= center2 + 20 && $(window).width() > 1100) {
+				$('.js-fixed-btn').removeClass('is-fixed');
+				$('.js-fixed-btn').css('top', center2 + 30);
+			}
 
-		if($(window).scrollTop() >= center && $(window).width() > 1100) {
-			$('.js-fixed-btn').addClass('is-fixed');
-			$('.js-fixed-btn').css('top', '50%');
-
-		} else {
-			$('.js-fixed-btn').removeClass('is-fixed');
 		}
 
-		if($(window).scrollTop() >= center2 && $(window).width() > 1100) {
-			$('.js-fixed-btn').removeClass('is-fixed');
-			$('.js-fixed-btn').css('top', center2 + 30);
-		}
+		$(window).on('scroll resize', makeCenter);
 
-	}
-
-	$(window).on('scroll resize', makeCenter);
+	})();
 
 	$('.js-gallery').slick({
 		fade: true,
@@ -199,9 +182,16 @@ $(document).ready(function() {
 		$('.js-popup').fadeOut();
 		$('.js-layer').fadeIn();
 		popup.fadeIn();
+		//if($(this).hasClass('js-album')) {
+		//
+		//}
 		if(popup.hasClass('popup-gallery')) {
 			initSlider();
+			var index = +$(this).data('index');
+			console.log(index);
+			$('.js-gallery').slick('slickGoTo', index-1);
 		}
+
 		return false;
 	});
 
@@ -212,50 +202,5 @@ $(document).ready(function() {
 		$('.js-layer').fadeOut();
 		return false;
 	});
-
-
-
-
-	// scroll button 'book my visit'
-	//function buttonFixed() {
-	//	var win = $(window)
-	//		,
-	//		center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2)
-	//		,
-	//		button = $('.js-fixed-btn')
-	//		,
-	//		buttonHeight = button.outerHeight()
-	//		,
-	//		scrollPos = win.scrollTop()
-	//		,
-	//		bottomPos = $('.js-section-center').offset().top
-	//		,
-	//		absolutePos = $('.js-section-center').offset().top + $('.js-section-center').outerHeight()/2 - buttonHeight;
-	//
-	//	if (scrollPos > center && scrollPos < bottomPos && win.width() > 1100) {
-	//		button.addClass('is-fixed').css('top', '50%');
-	//		console.log('hi');
-	//	} else if (scrollPos < center || win.width() < 1100) {
-	//		button.removeClass('is-fixed').css('top', '50%');
-	//		console.log('hi2');
-	//
-	//	} else {
-	//		button.removeClass('is-fixed').css('top', absolutePos);
-	//		console.log('hi3');
-	//
-	//	}
-	//}
-	//
-	//buttonFixed();
-	//
-	//// scroll and resize
-	//(function() {
-	//	var win = $(window);
-	//
-	//	win.scroll(function() {
-	//		buttonFixed();
-	//	});
-	//})();
-
 
 });

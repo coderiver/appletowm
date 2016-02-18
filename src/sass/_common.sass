@@ -310,17 +310,15 @@ sup
 	right: 20px
 	top: 20px
 	background: #fff
-	visibility: hidden
-	opacity: 0
+	display: none
 	transition: opacity .3s, visibility .3s
-	&.is-open
-		visibility: visible
-		opacity: 1
 	p
 		font-size: 18px
-	.popup__close
-		right: 10px
-		top: 10px
+	.close-btn
+		color: #000
+		position: absolute
+		right: 0
+		top: 0
 
 .call-btn
 	width: 120px
@@ -337,6 +335,7 @@ sup
 	box-shadow: 0 0 0 10px rgba(#fff, .4)
 	+vertical
 	font-weight: 100
+	+tr(top)
 	+r(767)
 		width: 60px
 		height: 60px
@@ -390,13 +389,13 @@ sup
 	left: 0
 	right: 0
 	bottom: 0
-	padding: 15px
+	padding:  5px 15px
 	background-repeat: no-repeat
 	background-size: cover
 	z-index: 200
 	display: none
-	+rh(600)
-		overflow: auto
+	//+rh(600)
+	overflow: auto
 	+vertical
 	&__in
 		display: inline-block
