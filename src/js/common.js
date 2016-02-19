@@ -60,13 +60,18 @@ $(document).ready(function() {
 			}
 		});
 	}());
-
 	// callback-btn
 	(function (){
-		var center = ($('.js-fixed-btn').offset().top + 60) - ($(window).outerHeight() / 2);
-		var endPoint = $('.js-section-center').offset().top + ($('.js-section-center').outerHeight() / 2);
-		var center2 = ($('.js-section-center').offset().top  +$('.js-section-center').outerHeight() / 2) - ($(window).outerHeight() / 2);
 		function makeCenter() {
+			var scrollPos	 = $(window).scrollTop();
+			var btn	 = $('.js-fixed-btn');
+			var btnHeight	 = btn.outerHeight(true);
+			var win = $(window);
+			var section = $('.js-section-center');
+			//var center = (btn.offset().top + 60) - (win.outerHeight() / 2);
+			//var center2 = section.offset().top  - (section.outerHeight() / 2) ;
+			var positionAbs = section.offset().top - section.outerHeight() / 2 + btnHeight;
+			//console.log(btnHeight)
 			//if($(window).width() <= 1100) {
 			//	$('.js-fixed-btn').removeClass('is-fixed');
 			//	$('.js-fixed-btn').css('top', '50%');
@@ -74,23 +79,39 @@ $(document).ready(function() {
 			//}
 
 
-			if($(window).scrollTop() >= center && $(window).width() > 1100) {
+			if(scrollPos > 0 && scrollPos < positionAbs && win.width() > 1100) {
+				btn.addClass('is-fixed').css('top', 'initial');
 
-				$('.js-fixed-btn').addClass('is-fixed');
-				$('.js-fixed-btn').css('top', '50%');
+			} else if(scrollPos == 0 || win.width() < 1100){
+				btn.removeClass('is-fixed').css('top', 'initial');
 
-			} else {
-				$('.js-fixed-btn').removeClass('is-fixed');
-			}
-
-			if($(window).scrollTop() >= center2 + 20 && $(window).width() > 1100) {
-				$('.js-fixed-btn').removeClass('is-fixed');
-				$('.js-fixed-btn').css('top', center2 + 30);
+			} else  {
+				btn.removeClass('is-fixed').css('top', positionAbs);
 			}
 
 		}
+		//function buttonFixed() {
+		//	var	win		  = $(window),
+		//		button	   = $('.js-fixed-btn'),
+		//		buttonPos	   = $('.js-fixed-btn').offset().top,
+		//		buttonHeight = button.outerHeight(),
+		//		scrollPos	 = win.scrollTop(),
+		//		bottomPos	 = $('.js-section-center').offset().top,
+		//		absolutePos  = $('.js-section-center').offset().top + $('.js-section-center').outerHeight() - buttonHeight;
+		//
+		//	if ( scrollPos > 0 && scrollPos < bottomPos && win.width() > 1100) {
+		//		button.addClass('is-fixed').css('top', 'initial');
+		//	} else if (scrollPos == 0 || win.width() < 1100) {
+		//		button.removeClass('is-fixed').css('top', 'initial');
+		//	} else {
+		//		button.removeClass('is-fixed').css('top', absolutePos);
+		//	}
+		//}
+		//
+		//buttonFixed();
 
 		$(window).on('scroll resize', makeCenter);
+		//$(window).on('scroll resize', buttonFixed);
 
 	})();
 
@@ -146,7 +167,7 @@ $(document).ready(function() {
 		if(popup.hasClass('popup-gallery')) {
 			initSlider();
 			var index = +$(this).data('index');
-			console.log(index);
+			//console.log(index);
 			$('.js-gallery').slick('slickGoTo', index-1);
 		}
 

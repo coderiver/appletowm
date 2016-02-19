@@ -326,16 +326,21 @@ sup
 	border-radius: 50%
 	background-image: radial-gradient(50% 50%,#edac51 0%, #9d671d 100%)
 	position: absolute
-	top: 50%
+	//top: 50%
 	left: 50%
 	margin-left: -60px
-	margin-top: -60px
+	margin-top: 87px
 	border: 2px solid  #fff
 	z-index: 3
 	box-shadow: 0 0 0 10px rgba(#fff, .4)
 	+vertical
 	font-weight: 100
-	+tr(top)
+	transform: translate3d(0,0,0)
+	+r(1400)
+		margin-top: 65px
+	+r(1023)
+		margin-top: -60px
+		top: 50%
 	+r(767)
 		width: 60px
 		height: 60px
