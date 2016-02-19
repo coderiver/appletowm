@@ -3,6 +3,11 @@ $(document).ready(function() {
 	// mask
 	$('.js-phone').mask("+7 999-999-99-99");
 	// form validation
+	//function() {
+
+		$("html").niceScroll({mousescrollstep: 80});
+
+	//}
 	(function() {
 		var popup   = $('.js-popup'),
 			thanks  = $('.js-thanks-popup'),
@@ -67,7 +72,36 @@ $(document).ready(function() {
 		}
 		reCount();
 		var btnOffset = $('.js-helper').offset().top;
-		function makeCenter() {
+		function makeCenter(e) {
+			//e.preventDefault();
+			//e.stopPropagation();
+			//var scrollPos	 = $(window).scrollTop();
+			//var btn	 = $('.js-fixed-btn');
+			//var btnHeight	 = btn.outerHeight(true);
+			//var win = $(window);
+			//var section = $('.js-section-center');
+			//
+			//var positionAbs = section.offset().top - btnOffset + section.outerHeight()/2 - btnHeight/2;
+			//
+			//if(scrollPos > 0 && scrollPos < positionAbs && win.width() > 1100) {
+			//	btn.addClass('is-fixed').css('top', 'initial');
+			//	$('.test').css('top', 'initial')
+			//
+			//} else if(scrollPos == 0 || win.width() < 1101){
+			//	btn.removeClass('is-fixed').css('top', 'initial');
+			//	$('.test').css('top', 'initial')
+			//
+			//} else  {
+			//	btn.removeClass('is-fixed').css('top', positionAbs);
+			//	$('.test').css('top', positionAbs)
+			//
+			//}
+
+		}
+
+		$(window).on('scroll resize', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
 			var scrollPos	 = $(window).scrollTop();
 			var btn	 = $('.js-fixed-btn');
 			var btnHeight	 = btn.outerHeight(true);
@@ -89,10 +123,7 @@ $(document).ready(function() {
 				$('.test').css('top', positionAbs)
 
 			}
-
-		}
-
-		$(window).on('scroll resize', makeCenter);
+		});
 		$(window).on('resize', reCount);
 
 	//})();
