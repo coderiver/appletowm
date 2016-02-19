@@ -465,8 +465,13 @@ sup
 
 .popup-gallery
 	.popup__in
-		+rh(768)
-		width: 1000px
+		padding-bottom: 48px
+		padding-top: 65px
+		+r(1024)
+			width: 2500px
+		//+r(800)
+		+rh(750)
+			width: 1000px
 
 	.gallery-title
 		font-size: 36px
@@ -479,8 +484,8 @@ sup
 			font-size: 18px
 	.gallery-m
 		margin: 0 auto
-		padding: 0 150px
-		+r(767)
+		padding: 0 100px
+		+r(800)
 			padding:  0
 			.slick-arrow
 				display: none !important
@@ -551,6 +556,7 @@ sup
 	text-align: center
 	padding: em(12, 24)
 	border: 1px solid #fff
+	z-index: 4
 
 .callbackform
 	padding: 42px 85px
