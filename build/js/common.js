@@ -24,7 +24,7 @@ $(document).ready(function() {
 					}
 					else {
 						// reset values in all input fields
-						thanks.addClass('is-open');
+						thanks.fadeIn();
 						$('#popup-form').get(0).reset();
 						setTimeout(function() {
 							thanks.fadeOut();
@@ -49,7 +49,7 @@ $(document).ready(function() {
 				$.post('send.php', post_data, function(response) {
 					if (response.type == 'error') {}
 					else {
-						//thanks.addClass(500);
+						thanks.fadeIn();
 						$('#form').get(0).reset();
 						setTimeout(function() {
 							thanks.fadeOut();
@@ -62,56 +62,38 @@ $(document).ready(function() {
 	}());
 	// callback-btn
 	(function (){
+		function reCount() {
+			btnOffset = $('.js-helper').offset().top;
+		}
+		reCount();
+		var btnOffset = $('.js-helper').offset().top;
 		function makeCenter() {
 			var scrollPos	 = $(window).scrollTop();
 			var btn	 = $('.js-fixed-btn');
 			var btnHeight	 = btn.outerHeight(true);
 			var win = $(window);
 			var section = $('.js-section-center');
-			//var center = (btn.offset().top + 60) - (win.outerHeight() / 2);
-			//var center2 = section.offset().top  - (section.outerHeight() / 2) ;
-			var positionAbs = section.offset().top - section.outerHeight() / 2 + btnHeight;
-			//console.log(btnHeight)
-			//if($(window).width() <= 1100) {
-			//	$('.js-fixed-btn').removeClass('is-fixed');
-			//	$('.js-fixed-btn').css('top', '50%');
-			//	return ;
-			//}
 
+			var positionAbs = section.offset().top - btnOffset + section.outerHeight()/2 - btnHeight/2;
 
 			if(scrollPos > 0 && scrollPos < positionAbs && win.width() > 1100) {
 				btn.addClass('is-fixed').css('top', 'initial');
+				$('.test').css('top', 'initial')
 
-			} else if(scrollPos == 0 || win.width() < 1100){
+			} else if(scrollPos == 0 || win.width() < 1101){
 				btn.removeClass('is-fixed').css('top', 'initial');
+				$('.test').css('top', 'initial')
 
 			} else  {
 				btn.removeClass('is-fixed').css('top', positionAbs);
+				$('.test').css('top', positionAbs)
+
 			}
 
 		}
-		//function buttonFixed() {
-		//	var	win		  = $(window),
-		//		button	   = $('.js-fixed-btn'),
-		//		buttonPos	   = $('.js-fixed-btn').offset().top,
-		//		buttonHeight = button.outerHeight(),
-		//		scrollPos	 = win.scrollTop(),
-		//		bottomPos	 = $('.js-section-center').offset().top,
-		//		absolutePos  = $('.js-section-center').offset().top + $('.js-section-center').outerHeight() - buttonHeight;
-		//
-		//	if ( scrollPos > 0 && scrollPos < bottomPos && win.width() > 1100) {
-		//		button.addClass('is-fixed').css('top', 'initial');
-		//	} else if (scrollPos == 0 || win.width() < 1100) {
-		//		button.removeClass('is-fixed').css('top', 'initial');
-		//	} else {
-		//		button.removeClass('is-fixed').css('top', absolutePos);
-		//	}
-		//}
-		//
-		//buttonFixed();
 
 		$(window).on('scroll resize', makeCenter);
-		//$(window).on('scroll resize', buttonFixed);
+		$(window).on('resize', reCount);
 
 	})();
 

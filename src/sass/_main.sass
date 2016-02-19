@@ -254,6 +254,11 @@
 			margin-top: 0
 		+r(767)
 			bottom: 15px
+.helper
+	width: 0
+	height: 0
+	position: absolute
+	left: 50%
 
 .advantage
 	position: relative
@@ -284,17 +289,25 @@
 		color: #fff
 		background: rgba($primary, .8)
 		transition: top .3s ease, background .3s
+		+r(1688)
+			margin-top: -80px
 		+r(1380)
 			margin-top: -50px
 			padding: 0 20px
 			h3, .h3
 				font-size: 16px
+		+r(1050)
+			margin-top: -80px
 	&__title
 		height: 100px
 		+vertical
 		text-align: left
+		+r(1688)
+			height: 80px
 		+r(1380)
 			height: 50px
+		+r(1050)
+			height: 80px
 		h3, .h3
 			font-size: 18px
 			text-align: left
@@ -304,16 +317,41 @@
 		border-top: 1px solid $accent
 		padding-top: 38px
 		font-size: 14px
-		line-height: 1.8
+		line-height: 1.71
+		+r(1688)
+			line-height: 1.6
+		+r(1602)
+			padding-top: 20px
+			font-size: 12px
+		+r(1423)
+			line-height: 1.4
 		+r(1380)
 			padding-top: 10px
-			line-height: 1.2
+			line-height: 1.4
+			font-size: 14px
+		+r(1325)
+			font-size: 12px
+		+r(1300)
+			line-height: 1.6
+			font-size: 14px
+		+r(1150)
+			line-height: 1.4
+		+r(1050)
+			line-height: 1.7
+			font-size: 16px
+
 	&:hover
 		.advantage__more
 			top: 100px
 			background: $primary
+			+r(1688)
+				top: 80px
 			+r(1380)
 				top: 50px
+			+r(1050)
+				top: 80px
+			+r(1024)
+				overflow: auto
 
 .advantages
 	.col4
@@ -337,7 +375,7 @@
 					&:hover
 						.advantage__more
 							background: $accent
-		+r(950)
+		+r(1050)
 			width: 50%
 		+r(650)
 			width: 100%
