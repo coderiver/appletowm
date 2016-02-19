@@ -103,7 +103,7 @@ $(document).ready(function() {
 		});
 	}());
 	// callback-btn
-	(function (){
+	//(function (){
 		function reCount() {
 			btnOffset = $('.js-helper').offset().top;
 		}
@@ -137,7 +137,7 @@ $(document).ready(function() {
 		$(window).on('scroll resize', makeCenter);
 		$(window).on('resize', reCount);
 
-	})();
+	//})();
 
 	$('.js-gallery').slick({
 		fade: true,

@@ -60,7 +60,7 @@
 			font-size: 14px
 		+r(785)
 			//vertical-align: bottom
-			display: none
+			//display: none
 .screen
 	+vertical
 	position: relative
@@ -113,8 +113,6 @@
 			font-size: 150px
 		+r(767)
 			font-size: 75px
-
-
 	h1, .h1
 		margin: .3em 0
 	&__section
@@ -125,6 +123,7 @@
 		text-align: left
 		display: table
 		position: relative
+		z-index: 10
 		+r(767)
 			padding: 20px
 		.col1
@@ -147,6 +146,9 @@
 			+r(767)
 				position: relative
 				height: 150px
+		.call-btn
+			+r(1023)
+				top: 50% !important
 	&__icon
 		margin: 30px 0 25px
 		text-align: center
@@ -185,7 +187,6 @@
 			margin-top: 30px
 			+r(767)
 				margin-top: 15px
-
 
 .box-video
 	background-size: cover
@@ -254,6 +255,7 @@
 			margin-top: 0
 		+r(767)
 			bottom: 15px
+
 .helper
 	width: 0
 	height: 0
@@ -379,6 +381,7 @@
 			width: 50%
 		+r(650)
 			width: 100%
+
 .item
 	position: relative
 	&__img
