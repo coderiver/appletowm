@@ -2,5 +2,5 @@
 //=include lib/slick.min.js
 //=include lib/validator.js
 //=include lib/mask.js
-//=include lib/smooth.js
+//=include lib/scrollMagic.js
 //=include common.js

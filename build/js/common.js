@@ -3,11 +3,6 @@ $(document).ready(function() {
 	// mask
 	$('.js-phone').mask("+7 999-999-99-99");
 	// form validation
-	//function() {
-
-		$("html").niceScroll({mousescrollstep: 80});
-
-	//}
 	(function() {
 		var popup   = $('.js-popup'),
 			thanks  = $('.js-thanks-popup'),
@@ -66,67 +61,58 @@ $(document).ready(function() {
 		});
 	}());
 	// callback-btn
-	//(function (){
-		function reCount() {
-			btnOffset = $('.js-helper').offset().top;
-		}
-		reCount();
+	(function() {
 		var btnOffset = $('.js-helper').offset().top;
-		function makeCenter(e) {
-			//e.preventDefault();
-			//e.stopPropagation();
-			//var scrollPos	 = $(window).scrollTop();
-			//var btn	 = $('.js-fixed-btn');
-			//var btnHeight	 = btn.outerHeight(true);
-			//var win = $(window);
-			//var section = $('.js-section-center');
-			//
-			//var positionAbs = section.offset().top - btnOffset + section.outerHeight()/2 - btnHeight/2;
-			//
-			//if(scrollPos > 0 && scrollPos < positionAbs && win.width() > 1100) {
-			//	btn.addClass('is-fixed').css('top', 'initial');
-			//	$('.test').css('top', 'initial')
-			//
-			//} else if(scrollPos == 0 || win.width() < 1101){
-			//	btn.removeClass('is-fixed').css('top', 'initial');
-			//	$('.test').css('top', 'initial')
-			//
-			//} else  {
-			//	btn.removeClass('is-fixed').css('top', positionAbs);
-			//	$('.test').css('top', positionAbs)
-			//
-			//}
+		var scrollPos	 = $(window).scrollTop();
+		var btn	 = $('.js-fixed-btn');
+		var btnHeight	 = btn.height();
+		var win = $(window);
+		var section = $('.js-section-center');
+		var positionAbs = section.offset().top - btnOffset + section.outerHeight()/2;
 
-		}
 
-		$(window).on('scroll resize', function(e) {
-			e.preventDefault();
-			e.stopPropagation();
-			var scrollPos	 = $(window).scrollTop();
-			var btn	 = $('.js-fixed-btn');
-			var btnHeight	 = btn.outerHeight(true);
-			var win = $(window);
-			var section = $('.js-section-center');
+		var controller = new ScrollMagic.Controller();
+		var scene = new ScrollMagic.Scene({triggerElement: ".js-helper", duration: positionAbs })
+			.setPin(".js-fixed-btn")
+			.addTo(controller);
 
-			var positionAbs = section.offset().top - btnOffset + section.outerHeight()/2 - btnHeight/2;
-
-			if(scrollPos > 0 && scrollPos < positionAbs && win.width() > 1100) {
-				btn.addClass('is-fixed').css('top', 'initial');
-				$('.test').css('top', 'initial')
-
-			} else if(scrollPos == 0 || win.width() < 1101){
-				btn.removeClass('is-fixed').css('top', 'initial');
-				$('.test').css('top', 'initial')
-
-			} else  {
-				btn.removeClass('is-fixed').css('top', positionAbs);
-				$('.test').css('top', positionAbs)
+		function destroy() {
+			if(win.width() <= 1100) {
+				controller.removeScene(scene);
+				btn.css({
+					'top': '0',
+					'left': '0',
+					'position': 'absolute'
+				});
+				btn.parent('.scrollmagic-pin-spacer').css({
+					'width': btn.width(),
+					'height': btn.height(),
+					'margin-top': -btn.width()/2,
+					'margin-left': -btn.width()/2
+				});
+			} else {
+				controller.addScene(scene);
+				btn.parent('.scrollmagic-pin-spacer').css({
+					'width': btn.width(),
+					'height': btn.height(),
+					'margin-top': -btn.width()/2,
+					'margin-left': -btn.width()/2
+				});
 
 			}
-		});
-		$(window).on('resize', reCount);
 
-	//})();
+		}
+		destroy();
+		function reCount() {
+			btnOffset = $('.js-helper').offset().top;
+			scene.duration(section.offset().top - btnOffset + section.outerHeight()/2)
+		}
+		reCount();
+		$(window).on('resize', function() {
+			reCount();
+			destroy();
+		});
+	})();
 
 	$('.js-gallery').slick({
 		fade: true,
